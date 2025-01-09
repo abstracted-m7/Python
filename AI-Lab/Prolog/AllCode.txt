@@ -1,0 +1,168 @@
+/* calculate*/
+sum(A,B):-
+    C is A+B,
+    write(C).
+
+sub(A,B):-
+    C is A-B,
+    write(C).
+
+multi(A,B):-
+    C is A*B,
+    write(C).
+
+div(A,B):-
+    C is A/B,
+    write(C).
+
+/* MaxMin*/
+find_max(X,Y,X):-
+    X>=Y.
+find_max(X,Y,Y):-
+    X<Y.
+find_min(X,Y,X):-
+    X=<Y.
+find_min(X,Y,Y):-
+    X>Y.
+
+/*Odd-even*/
+is_even(N):-
+    N mod 2 =:= 0.
+is_odd(N):-
+    N mod 2 =:= 1.
+
+/*Factorial*/
+fact(0,1).
+fact(N,F):-
+    N>0,
+    N1 is N-1,
+    fact(N1,F1),
+    F is N*F1.
+
+/*Fibonacci Series*/
+fib(0,0).
+fib(1,1).
+fib(N,F):-
+    N>1,
+    N1 is N-1,
+    N2 is N-2,
+    fib(N1,F1),
+    fib(N2,F2),
+    F is F1+F2.
+
+/*Prime Number*/
+is_prime(2).
+is_prime(3).
+is_prime(N):-
+    N>3,
+    N mod 2 =\= 0,
+    \+ factorCal(N,3).
+factorCal(N,Factor):-
+    N mod Factor =:=0.
+factorCal(N,Factor):-
+    Factor*Factor < N,
+    NextFactor is Factor + 2,
+    factorCal(N,NextFactor).
+
+/*
+Palindrome
+Note User input should be :is_palindrom([1, 2, 3, 4, 5, 2, 1]). <- for list
+is_palindrom("maam"). <- For str
+*/
+%For List 
+is_palindrome([]).
+is_palindrome([_]).
+is_palindrome(List):-
+    reverse(List,List).
+%For single number or word
+check_palindrome(Str):-
+    string_chars(Str, Chars),
+    reverse(Chars, ReverseChars),
+    Chars = ReverseChars.
+
+
+
+/*
+N netural numbers
+UI: loop(5).
+*/
+loop(N):-
+    write("Printing the numbers upto : "),
+    write(N),
+    nl,
+    increment(1,N).
+increment(Current, N):-
+    Current =< N,
+    write("The value : "),
+    write(Current),
+    nl,
+    Next is Current + 1,
+    increment(Next, N).
+increment(Current, N):-
+    Current > N.
+
+/*
+Max of three numbers
+*/
+max(A,B,C,Max):-
+    (
+    A >= B, A>= C->  Max = A;
+    B >= A, B>=C ->  Max = B;
+    C >= A, C>= B ->   Max = C
+    ).
+
+
+
+% Star Pattern
+pattern(0).
+pattern(N):-
+    N > 0,
+    print_pattern(1, N).
+
+print_pattern(Current, N):-
+    Current =< N,
+    print_row(Current),
+    nl,
+    Next is Current + 1,
+    print_pattern(Next,N).
+
+print_pattern(Current, N):-
+    Current > N.
+
+print_row(0).
+print_row(Col):-
+    Col > 0,
+    write("*"),
+    NextCol is Col - 1,
+    print_row(NextCol).
+
+
+% Number Pattern
+number_pattern(0).
+number_pattern(N) :- 
+    N > 0, 
+    print_number_pattern(1, N).
+
+print_number_pattern(Current, N) :- 
+    Current =< N, 
+    print_row(Current),
+    nl,
+    Next is Current + 1, 
+    print_number_pattern(Next, N).
+
+print_number_pattern(Current, N):-
+    Current > N.
+
+% Print numbers from 1 to Current
+print_row(Current) :- 
+    print_row(Current, 1).
+
+% Helper predicate to print numbers from 1 to Current
+print_row(Current, Current) :- 
+    write(Current).
+print_row(Current, Col) :- 
+    Col < Current, 
+    write(Col), 
+    write(' '),
+    NextCol is Col + 1,
+    print_row(Current, NextCol).
