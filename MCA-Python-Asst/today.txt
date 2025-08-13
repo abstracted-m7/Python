@@ -1,0 +1,15 @@
+
+
+
+ASST-2
+
+# Check number is even or odd.
+# Check number is positive, negative or zero
+# find gretest among three number
+# find leap year or not
+# grade calculator
+    # if percentage > 85 -> A grade
+    # 75 <= percentage <= 85 -> B grade
+    # 50 <= percentage < 75 -> c grade
+    # 30 <= percentage < 50 -> D grade
+    # percentage < 30 -> Fail
