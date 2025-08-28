@@ -2,7 +2,6 @@ import heapq
 from collections import defaultdict, deque
 
 class Graph:
-    """Graph representation for UCS algorithm"""
     
     def __init__(self):
         self.graph = defaultdict(list)
@@ -12,26 +11,15 @@ class Graph:
         self.graph[u].append((v, weight))
     
     def get_neighbors(self, node):
-        """Get neighbors of a node with their weights"""
         return self.graph[node]
 
 class UCS:
-    """Uniform Cost Search Algorithm Implementation"""
     
     def __init__(self, graph):
         self.graph = graph
     
     def search(self, start, goal):
-        """
-        Perform Uniform Cost Search from start to goal
-        
-        Args:
-            start: Starting node
-            goal: Goal node
-        
-        Returns:
-            tuple: (path, cost) if goal found, (None, float('inf')) otherwise
-        """
+
         # Priority queue: (cost, node, path)
         priority_queue = [(0, start, [start])]
         
@@ -65,12 +53,7 @@ class UCS:
         return None, float('inf')
     
     def search_with_details(self, start, goal):
-        """
-        UCS with detailed step-by-step information
-        
-        Returns:
-            dict: Contains path, cost, nodes_explored, and step_details
-        """
+
         priority_queue = [(0, start, [start])]
         visited = {}
         nodes_explored = 0
@@ -137,9 +120,7 @@ def create_sample_graph():
     return g
 
 def demonstrate_ucs():
-    """Demonstrate UCS algorithm with examples"""
-    print("=== Uniform Cost Search Demonstration ===\n")
-    
+  
     # Create sample graph
     graph = create_sample_graph()
     ucs = UCS(graph)
@@ -152,19 +133,8 @@ def demonstrate_ucs():
         ('A', 'G')  # Non-existent goal
     ]
     
-    for start, goal in test_cases:
-        print(f"Searching from {start} to {goal}:")
-        path, cost = ucs.search(start, goal)
-        
-        if path:
-            print(f"  Path found: {' -> '.join(path)}")
-            print(f"  Total cost: {cost}")
-        else:
-            print(f"  No path found from {start} to {goal}")
-        print()
-    
+
     # Detailed search example
-    print("=== Detailed Search Example ===")
     print("Searching from A to F with step details:")
     
     result = ucs.search_with_details('A', 'F')
@@ -173,11 +143,7 @@ def demonstrate_ucs():
         print(f"Path: {' -> '.join(result['path'])}")
         print(f"Cost: {result['cost']}")
         print(f"Nodes explored: {result['nodes_explored']}")
-        print("\nStep-by-step details:")
-        
-        for step in result['step_details'][:5]:  # Show first 5 steps
-            print(f"  Step {step['step']}: Node {step['current_node']}, "
-                  f"Cost {step['current_cost']}, Path {step['current_path']}")
+
 
 if __name__ == "__main__":
     demonstrate_ucs()
