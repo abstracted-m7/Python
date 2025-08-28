@@ -26,4 +26,10 @@ graph = {
     'D': [], 'E': [], 'F': [], 'G': []
 }
 path = depth_limited_search(graph, 'A', 'G', 2)
-print(path)
+
+if path == "failure":
+    print("Path not found")
+elif path == "cutoff":
+    print("Search cutoff due to depth limit")
+else:
+    print(f"The path is: {path}")
