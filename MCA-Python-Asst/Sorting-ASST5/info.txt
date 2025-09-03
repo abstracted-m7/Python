@@ -1,0 +1,13 @@
+1. Implementation the selection sort algorithm in python
+2. Display the selection and swapping process clearly.
+
+3. Allow user input for the list to be sorted.
+
+4. Implement the bubble sort algorithm in python.
+5. Show intermediate steps of each iteration.
+
+6. Sort the same list and compare results with selection sort.
+7. Show sorted output side-by-side.
+
+
+8. Discuss performance or iteration count differences in comments.
