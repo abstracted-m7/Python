@@ -1,3 +1,6 @@
+# 8. Discuss performance or iteration count differences in comments.
+
+
 # Bubble Sort:
 # - Iterations: Up to (n-1) passes; inner loop runs (n-1-i) times per pass
 # - Comparisons: ~n*(n-1)/2
@@ -13,3 +16,4 @@
 # - Time Complexity: O(n²) in all cases
 # - Space Complexity: O(1) (in-place)
 # - Notes: Fewer swaps than Bubble Sort; predictable behavior regardless of input order
+
