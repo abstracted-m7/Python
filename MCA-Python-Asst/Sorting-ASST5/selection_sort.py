@@ -14,20 +14,32 @@
 
 '''
 
+def ordinal(n):
+    # Helper to get ordinal suffix for a number
+    return "%d%s" % (n,"tsnrhtdd"[(n//10%10!=1)*(n%10<4)*n%10::4])
+
 def selection_sort(arr):
     n = len(arr)
     for i in range(n):
-        # Find the minimum element in the unsorted part
         min_idx = i
-        for j in range(i+1, n):
+        for j in range(i + 1, n):
             if arr[j] < arr[min_idx]:
                 min_idx = j
-        # Swap the found minimum element with the first element of unsorted part
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
-        print(f"In {i}'th iteration: {arr}")
+        print(f"After {ordinal(i + 1)} iteration: {arr}")
     return arr
 
+def main():
+    user_input = input("Enter numbers separated by spaces: ")
+    try:
+        arr = list(map(int, user_input.split()))
+    except ValueError:
+        print("Please enter valid integers only.")
+        return
 
-arr = [1, 3, 5, 6, 2, 9]
-print(f"Org array: {arr}")
-print("Selection Sort:", selection_sort(arr))
+    print(f"Original array: {arr}")
+    sorted_arr = selection_sort(arr)
+    print("Sorted array:", sorted_arr)
+
+if __name__ == "__main__":
+    main()
