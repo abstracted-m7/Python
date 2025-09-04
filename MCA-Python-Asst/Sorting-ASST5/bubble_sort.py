@@ -14,7 +14,8 @@
 
 '''
 
-
+'''
+# For Only Bubble Sort
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
@@ -30,3 +31,31 @@ def bubble_sort(arr):
 arr = [6, 3, 5, 1, 2, 9]
 print(f"Org array: {arr}")
 print(f"Bubble Sort: {bubble_sort(arr)}")
+
+'''
+
+# For Q4 & Q5 in Combine
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False  # Track if any swap happens in this iteration
+        print(f"Start of iteration {i + 1}: {arr}")
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                # Swap if element is greater than next element
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+                print(f"  Swapped elements at indices {j} and {j + 1}: {arr}")
+        if not swapped:
+            # No swaps means array is sorted
+            print("No swaps in this iteration, array is sorted early.")
+            break
+        print(f"End of iteration {i + 1}: {arr}\n")
+    return arr
+
+# Example usage
+arr = [6, 3, 5, 1, 2, 9]
+print(f"Original array: {arr}")
+sorted_arr = bubble_sort(arr)
+print(f"Sorted array: {sorted_arr}")
+
