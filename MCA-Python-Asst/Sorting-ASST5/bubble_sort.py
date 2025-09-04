@@ -44,15 +44,15 @@ def bubble_sort(arr):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
                 swapped = True
-                print(f"  Swapped elements at indices {j} and {j + 1}: {arr}")
+                print(f"  Swapped elements at idx {j} and {j + 1}: {arr}")
         if not swapped:
-            print("No swaps in this iteration, array is sorted early.")
+            print("No swap needed, array already sorted.")
             break
         print(f"End of iteration {i + 1}: {arr}\n")
     return arr
 
 def main():
-    user_input = input("Enter numbers separated by spaces: ")
+    user_input = input("Enter numbers X Y: ")
     try:
         arr = list(map(int, user_input.strip().split()))
     except ValueError:
