@@ -38,24 +38,30 @@ print(f"Bubble Sort: {bubble_sort(arr)}")
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
-        swapped = False  # Track if any swap happens in this iteration
+        swapped = False
         print(f"Start of iteration {i + 1}: {arr}")
         for j in range(0, n - i - 1):
             if arr[j] > arr[j + 1]:
-                # Swap if element is greater than next element
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
                 swapped = True
                 print(f"  Swapped elements at indices {j} and {j + 1}: {arr}")
         if not swapped:
-            # No swaps means array is sorted
             print("No swaps in this iteration, array is sorted early.")
             break
         print(f"End of iteration {i + 1}: {arr}\n")
     return arr
 
-# Example usage
-arr = [6, 3, 5, 1, 2, 9]
-print(f"Original array: {arr}")
-sorted_arr = bubble_sort(arr)
-print(f"Sorted array: {sorted_arr}")
+def main():
+    user_input = input("Enter numbers separated by spaces: ")
+    try:
+        arr = list(map(int, user_input.strip().split()))
+    except ValueError:
+        print("Please enter valid integers only.")
+        return
 
+    print(f"Original array: {arr}")
+    sorted_arr = bubble_sort(arr)
+    print(f"Sorted array: {sorted_arr}")
+
+if __name__ == "__main__":
+    main()
