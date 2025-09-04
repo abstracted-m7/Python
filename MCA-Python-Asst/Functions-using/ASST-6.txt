@@ -1,0 +1,9 @@
+
+1. Define a function to calculate the square of number ( using positional argument ).
+2. Define a function for the area of a rectangle with a default value for breadth.
+3. Define a function using keyword arguments to print employee details.
+4. Write a function that returns both sum and product of two given numbers.
+5. Write the following using recursive functions:
+        5.1. Factorial of a number
+        5.2. nth Fibonacci number
+        5.3. power calculation (x ^ n).
