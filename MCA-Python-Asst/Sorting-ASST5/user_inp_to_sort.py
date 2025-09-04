@@ -13,7 +13,6 @@
         s4: Output the sorted list.
 '''
 
-
 # Step 1: Take user input as a string
 user_input = input("Enter numbers x y: ")
 
@@ -27,6 +26,8 @@ for i in range(n):
         if num_list[j] > num_list[j + 1]:
             # Swaping
             num_list[j], num_list[j + 1] = num_list[j + 1], num_list[j]
+            print(f"After swapping {j}'idx and {j+1}'idx: {num_list}")
 
 # Step 4: Print the sorted list
 print("Sorted list:", num_list)
+
