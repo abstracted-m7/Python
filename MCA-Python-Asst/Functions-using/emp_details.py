@@ -3,17 +3,15 @@
 
 '''
 
-def print_employee_details(**employee_info):
-    # Edge Case: Ensure that employee details are given
+def emp_details(**employee_info):
     if not employee_info:
-        raise ValueError("Employee details cannot be empty.")
-    
+            raise ValueError("Employee details is empty.")
     for key, value in employee_info.items():
         print(f"{key}: {value}")
 
 # Edge Case Testing
 try:
-    print_employee_details(name="Manish", age=22, role="SDE-I")  # Valid data
-    print_employee_details()  # No data
+    emp_details(name="MG", age=22, role="SDE-I")
+    emp_details()  # No data
 except Exception as e:
-    print(f"The Custom error shows: {e}")
+    print(f"The Custom error: {e}")
