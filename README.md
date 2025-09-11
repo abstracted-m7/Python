@@ -3,49 +3,6 @@
 ## 🐍 Overview
 This repository contains comprehensive Python programming practice materials, ranging from basic syntax to advanced concepts, libraries, and real-world applications.
 
-## 📁 Repository Structure
-```
-Python/
-├── Basics/
-│   ├── syntax-fundamentals/
-│   ├── data-types/
-│   ├── control-structures/
-│   └── functions/
-├── Object-Oriented-Programming/
-│   ├── classes-objects/
-│   ├── inheritance/
-│   ├── polymorphism/
-│   └── design-patterns/
-├── Data-Structures/
-│   ├── lists-tuples/
-│   ├── dictionaries-sets/
-│   ├── strings/
-│   └── collections-module/
-├── Advanced-Topics/
-│   ├── decorators/
-│   ├── generators-iterators/
-│   ├── context-managers/
-│   └── metaclasses/
-├── File-IO/
-│   ├── file-operations/
-│   ├── json-handling/
-│   ├── csv-processing/
-│   └── pickle-serialization/
-├── Libraries-Frameworks/
-│   ├── standard-library/
-│   ├── numpy-pandas/
-│   ├── matplotlib-seaborn/
-│   ├── requests-apis/
-│   └── flask-django/
-├── Projects/
-│   ├── beginner-projects/
-│   ├── intermediate-projects/
-│   └── advanced-projects/
-├── Algorithms-Implementation/
-├── Interview-Questions/
-├── Best-Practices/
-└── Notes/
-```
 
 ## 🎯 Learning Path
 
